@@ -2,16 +2,16 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+}
 
-  span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-  img {
-    width: 20px;
-  }
+img {
+  width: 20px;
 }
 
 .skillList {
@@ -31,17 +31,34 @@ hr {
   margin: 30px auto;
 }
 
-@media (width >= 800px) {
+/* Media query for mobile view */
+@media (max-width: 800px) {
   .skillList {
-    max-width: fit-content;
-    gap: 30px;
-
-    p {
-      font-size: 20px;
-    }
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: flex-start; /* Left-align the items */
+    gap: 20px;               /* Gap between items */
+    padding-left: 20px;      /* Add padding for spacing from the edge */
   }
 
   hr {
     width: 300px;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 800px) {
+  .skillList {
+    max-width: fit-content;
+    gap: 30px;
+    flex-direction: row;   /* Keep it in row for larger screens */
+  }
+
+  hr {
+    width: 300px;
+  }
+
+  p {
+    font-size: 20px;
   }
 }
